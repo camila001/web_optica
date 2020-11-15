@@ -33,26 +33,32 @@
                             <h4>Nuevo cliente</h4>
                             <br>
                             <div class="input-field">
+                                <i class="material-icons prefix">lock_outline</i>
                                 <input id="r" type="text" name="rut">
                                 <label for="r">Rut</label>
                             </div> 
                             <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
                                 <input id="n" type="text" name="name">
                                 <label for="n">Nombre</label>
                             </div>
                             <div class="input-field">
+                                <i class="material-icons prefix">home</i>
                                 <input id="d" type="text" name="direccion">
                                 <label for="d">Dirección</label>
                             </div>
                             <div class="input-field">
-                                <input id="f" type="text" name="telefono">
-                                <label for="f">Telefono</label>
+                                <i class="material-icons prefix">phone</i>
+                                <input id="t" type="text" name="telefono">
+                                <label for="t">Telefono</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" class="datepicker" id="c" name="fecha">
-                                <label for="c">Fecha</label>
+                                <i class="material-icons prefix">date_range</i>
+                                <input type="text" class="datepicker" id="f" name="fecha">
+                                <label for="f">Fecha</label>
                             </div>
                             <div class="input-field">
+                                <i class="material-icons prefix">email</i>
                                 <input id="e" type="text" name="email">
                                 <label for="e">Email</label>
                             </div> 
@@ -111,7 +117,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.datepicker');
             var instances = M.Datepicker.init(elems, {
-                'format': 'dd/mm/yyyy',
+                'format': 'yyyy/mm/dd',
                 'i18n': {
                     months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
                     monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"],

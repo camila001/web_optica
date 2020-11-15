@@ -15,6 +15,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body class="grey darken-4">
 
@@ -35,12 +36,15 @@
                     <div class="col l4 m4 s12">
                         <?php if(!isset($_SESSION['editar'])){ ?>
                             <h4>Añadir usuario</h4>
+                            <br>
                             <form action="../controllers/NewUser.php" method="POST">
                                 <div class="input-field">
+                                    <i class="material-icons prefix">lock_outline</i>
                                     <input id="u" type="text" name="rut">
                                     <label for="u">Rut</label>
                                 </div> 
                                 <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
                                     <input id="d" type="text" name="name">
                                     <label for="d">Nombre</label>
                                 </div> 
@@ -67,34 +71,22 @@
                         <?php }else{?>
                             <h4>Editar estado</h4>
                             <br>
-                            <form action="../controllers/EditUser.php">
+                            <form action="../controllers/EditUser.php" method="POST">
+                                <input type="hidden" name="rut" value="<?= $_SESSION['vendedor']['rut']?>"> 
                                 <div class="input-field">
-                                    <input disabled value="<?= $_SESSION['vendedor']['rut'] ?>" id="disabled" type="text" class="validate" name="rut">
-                                    <label for="disabled">Rut</label>
-                                </div>
-                                <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
                                     <input disabled value="<?= $_SESSION['vendedor']['nombre'] ?>" id="disabled" type="text" class="validate">
                                     <label for="disabled">Nombre</label>
-                                </div>
-                                <!-- 
+                                </div> 
                                 <div class="input-field">
-                                    <select name="estado">
+                                    <i class="material-icons prefix">block</i>
+                                    <select name="estado" id="estado">
                                         <option value="1">Habilitado</option>
-                                        <option value="0">Deshabilitado</option>
+                                        <option value="0">Bloqueado</option>
                                     </select>
                                     <label>Estado</label>
                                 </div>
-                                -->
 
-                                <div class="switch">
-                                    <label>Estado</label> <br>
-                                    <label>
-                                    Deshabilitado
-                                    <input type="checkbox">
-                                    <span class="lever"></span>
-                                    Habilitado
-                                    </label>
-                                </div>
                                 <br>
                                 <button class="waves-effect waves-light btn ancho-100 deep-orange">Editar usuario</button>
                             </form>
@@ -151,7 +143,7 @@
                                             <td><?php if($item['estado']==1){
                                                     echo "Habilitado";
                                                 }else{
-                                                    echo "Deshabilitado";
+                                                    echo "Bloqueado";
                                                 } ?>
                                             </td>
                                             <td><button name="bt_edit" value="<?= $item["rut"]?>" class="btn-floating waves-effect waves-light deep-orange"><i class="material-icons">edit</i></button></td>

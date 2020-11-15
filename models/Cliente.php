@@ -12,7 +12,7 @@ class Cliente{
         $stm->bindParam(":C",$data['direccion_cliente']);
         $stm->bindParam(":D",$data['telefono_cliente']);
         $stm->bindParam(":E",$data['fecha_creacion']);
-        $stm->bindParam(":E",$data['email_cliente']);
+        $stm->bindParam(":F",$data['email_cliente']);
         return $stm->execute();
     }
 

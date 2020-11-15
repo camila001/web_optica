@@ -41,6 +41,7 @@ class NewClient{
             'fecha_creacion'=>$this->fecha,
             'email_cliente'=>$this->email
         ];
+        //print_r($data);
         $count = $model->insertarCliente($data);
 
         if($count==1){
