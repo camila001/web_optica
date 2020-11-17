@@ -18,7 +18,7 @@
         <?php if($_SESSION['user']['rol']=="vendedor"){ ?>
             <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo" style="margin-left: 20px;">Sesión iniciada como: <?= $_SESSION['user']['nombre'] ?></a>
+                    <a href="#" class="brand-logo" style="margin-left: 20px;"><i class="material-icons" style="font-size: 40px;">assignment_ind</i> <?= $_SESSION['user']['nombre'] ?></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px;">
                         <li><a href="../view/user.php">Añadir cliente</a></li>
                         <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
