@@ -27,13 +27,29 @@
             <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
                 <a href="#" class="brand-logo" style="margin-left: 20px;"><i class="material-icons" style="font-size: 40px;">admin_panel_settings</i>Admin</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px; font-family:'Raleway', sans-serif;">
                     <li><a href="salir.php"><i class="material-icons" style="font-size: 40px;">exit_to_app</i></a></li>
                 </ul>
                 </div>
             </nav>
 
-            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="../img/paper.jpg">
+                        </div>
+                        <div style="display: flex;">
+                            <a href="#user" class="white-text"><i class="material-icons white-text"  style="font-size: 40px;">admin_panel_settings</i></a>
+                            <a href="#user" class="white-text" style="margin-left: 10px;">Administrador</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="salir.php"><i class="material-icons deep-orange-text" style="font-size: 40px;">exit_to_app</i></a></li>
+            </ul>
+
+            <div class="card-panel center" style="width:1200px; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <div class="row">
                     <div class="col l4 m4 s12">
                         <?php if(!isset($_SESSION['editar'])){ ?>
@@ -194,6 +210,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
         });
     </script>
 </body>

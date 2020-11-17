@@ -19,6 +19,7 @@
             <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo" style="margin-left: 20px; font-family:'Raleway', sans-serif;"><i class="material-icons" style="font-size: 40px;">assignment_ind</i> <?= $_SESSION['user']['nombre'] ?></a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px;">
                         <li><a href="../view/user.php">Añadir cliente</a></li>
                         <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
@@ -28,7 +29,25 @@
                 </div>
             </nav>
 
-            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="../img/paper.jpg">
+                        </div>
+                        <div style="display: flex;">
+                            <a href="#user" class="white-text"><i class="material-icons white-text"  style="font-size: 40px;">assignment_ind</i></a>
+                            <a href="#user" class="white-text" style="margin-left: 10px;"><?= $_SESSION['user']['nombre'] ?></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../view/user.php">Añadir cliente</a></li>
+                <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
+                <li><a href="../view/ingresoReceta.php">Ingreso</a></li>
+                <li><a href="salir.php"><i class="material-icons deep-orange-text" style="font-size: 40px;">exit_to_app</i></a></li>
+            </ul>
+
+            <div class="card-panel" style="width:500px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <p class="center">
                     <i class="material-icons" style="font-size: 80px;">handyman</i>
                 </p>
@@ -58,6 +77,12 @@
             </p>
         </div>
     <?php } ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script> 
 </body>
 </html>
