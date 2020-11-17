@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recetas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +18,7 @@
         <?php if($_SESSION['user']['rol']=="vendedor"){ ?>
             <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo" style="margin-left: 20px;">Sesión iniciada como: <?= $_SESSION['user']['nombre'] ?></a>
+                    <a href="#" class="brand-logo" style="margin-left: 20px;"><i class="material-icons" style="font-size: 40px;">assignment_ind</i> <?= $_SESSION['user']['nombre'] ?></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px;">
                         <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
                         <li><a href="../view/ingresoReceta.php">Ingreso</a></li>
