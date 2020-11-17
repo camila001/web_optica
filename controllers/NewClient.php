@@ -45,9 +45,9 @@ class NewClient{
         $count = $model->insertarCliente($data);
 
         if($count==1){
-            $_SESSION['c_resp'] == "Cliente añadido";
+            $_SESSION['c_resp'] = "Cliente añadido";
         }else{
-            $_SESSION['c_error'] == "Error en la BD";
+            $_SESSION['c_error'] = "Error en la BD";
         }
         header("Location: ../view/user.php");
     }
