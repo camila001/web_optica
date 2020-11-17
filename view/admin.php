@@ -15,23 +15,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet"> 
     <link href="../css/style.css" rel="stylesheet">
 </head>
-<body class="grey darken-4">
+<body style="background-image: url('../img/background.jpg'); font-family: 'Coustard', serif;">
 
     <?php if(isset($_SESSION['user'])){ ?>
         <?php if($_SESSION['user']['rol']=="administrador"){ ?>
 
-            <nav class="grey darken-2">
+            <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
-                <a href="#" class="brand-logo" style="margin-left: 20px; font-family:'Raleway', sans-serif;"><i class="material-icons" style="font-size: 40px;">admin_panel_settings</i>Admin</a>
+                <a href="#" class="brand-logo" style="margin-left: 20px;"><i class="material-icons" style="font-size: 40px;">admin_panel_settings</i>Admin</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px; font-family:'Raleway', sans-serif;">
                     <li><a href="salir.php"><i class="material-icons" style="font-size: 40px;">exit_to_app</i></a></li>
                 </ul>
                 </div>
             </nav>
 
-            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center;">
+            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <div class="row">
                     <div class="col l4 m4 s12">
                         <?php if(!isset($_SESSION['editar'])){ ?>
@@ -48,10 +50,10 @@
                                     <input id="d" type="text" name="name">
                                     <label for="d">Nombre</label>
                                 </div> 
-                                <button class="waves-effect waves-light btn ancho-100 deep-orange">Crear usuario</button>
+                                <button class="waves-effect waves-light btn ancho-100 deep-orange" style="font-family: 'Coustard', serif;">Crear usuario</button>
                             </form>
 
-                            <p class="green-text">
+                            <p class="green-text center">
                                 <?php 
                                     if(isset($_SESSION['resp'])){
                                         echo $_SESSION['resp'];
@@ -59,7 +61,7 @@
                                     }
                                 ?>
                             </p>
-                            <p class="red-text">
+                            <p class="red-text center">
                                 <?php 
                                     if(isset($_SESSION['error'])){
                                         echo $_SESSION['error'];
@@ -72,10 +74,15 @@
                             <h4>Editar estado</h4>
                             <br>
                             <form action="../controllers/EditUser.php" method="POST">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input disabled value="<?= $_SESSION['vendedor']['rut'] ?>" id="disabled" type="text">
+                                    <label for="disabled">Rut</label>
+                                </div> 
                                 <input type="hidden" name="rut" value="<?= $_SESSION['vendedor']['rut']?>"> 
                                 <div class="input-field">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input disabled value="<?= $_SESSION['vendedor']['nombre'] ?>" id="disabled" type="text" class="validate">
+                                    <input disabled value="<?= $_SESSION['vendedor']['nombre'] ?>" id="disabled" type="text">
                                     <label for="disabled">Nombre</label>
                                 </div> 
                                 <div class="input-field">
@@ -88,7 +95,7 @@
                                 </div>
 
                                 <br>
-                                <button class="waves-effect waves-light btn ancho-100 deep-orange">Editar usuario</button>
+                                <button class="waves-effect waves-light btn ancho-100 deep-orange" style="font-family: 'Coustard', serif;">Editar usuario</button>
                             </form>
                         
                         <?php
@@ -96,7 +103,7 @@
                                 unset($_SESSION['vendedor']); 
                             } 
                         ?>
-                        <p class="green-text">
+                        <p class="green-text center">
                             <?php 
                                 if(isset($_SESSION['editado'])){
                                     echo $_SESSION['editado'];
@@ -104,7 +111,7 @@
                                 }
                             ?>
                         </p>
-                        <p class="red-text">
+                        <p class="red-text center">
                             <?php 
                                 if(isset($_SESSION['e_error'])){
                                     echo $_SESSION['e_error'];
@@ -156,7 +163,7 @@
                 </div>
             </div>
         <?php }else { ?>
-            <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; font-family:'Raleway', sans-serif;">
+            <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; background: rgba(255, 255, 255, 0.8)">
             <h4 class="center" style="color:#ef5350;">Error de acceso</h4>
             <p class="center">Debes ser administrador para ingresar</p>
             <div style="display: flex; justify-content: space-between;">
@@ -172,7 +179,7 @@
 
         
     <?php }else{ ?>
-        <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; font-family:'Raleway', sans-serif;">
+        <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; background: rgba(255, 255, 255, 0.8)">
             <h4 class="center" style="color:#ef5350;">Error de acceso</h4>
             <p class="center">Debes iniciar sesión</p>
             <p class="center">

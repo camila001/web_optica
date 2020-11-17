@@ -10,6 +10,6 @@
     border-bottom: 1px solid #ff5722 !important;
     box-shadow: 0 1px 0 0  #ff5722 !important;
 }
-.input-field .prefix.active {
+.input-field .prefix.active{
     color: #000;
 }

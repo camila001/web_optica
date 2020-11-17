@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet"> 
 </head>
-<body class="grey darken-4">
+<body style="background-image: url('../img/background.jpg'); font-family: 'Coustard', serif;">
     <?php if(isset($_SESSION['user'])){ ?> 
         <?php if($_SESSION['user']['rol']=="vendedor"){ ?>
-            <nav class="grey darken-2">
+            <nav class="deep-orange accent-4">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo" style="margin-left: 20px; font-family:'Raleway', sans-serif;">Sesión iniciada como: <?= $_SESSION['user']['nombre'] ?></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px; font-family:'Raleway', sans-serif;">
+                    <a href="#" class="brand-logo" style="margin-left: 20px;">Sesión iniciada como: <?= $_SESSION['user']['nombre'] ?></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px;">
                         <li><a href="../view/user.php">Añadir cliente</a></li>
                         <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
                         <li><a href="../view/ingresoReceta.php">Ingreso</a></li>
@@ -26,7 +28,7 @@
                 </div>
             </nav>
 
-            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center;">
+            <div class="card-panel" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <div class="row">
                     <div class="col l4 m4 s12">
                         <form action="../controllers/NewClient.php" method="POST">
@@ -62,10 +64,10 @@
                                 <input id="e" type="text" name="email">
                                 <label for="e">Email</label>
                             </div> 
-                            <button class="waves-effect waves-light btn ancho-100 deep-orange">Añadir</button>
+                            <button class="waves-effect waves-light btn ancho-100 deep-orange" style="font-family: 'Coustard', serif;">Añadir</button>
                         </form>
 
-                        <p class="green-text">
+                        <p class="green-text center">
                             <?php
                                 if(isset($_SESSION['c_resp'])){
                                     echo $_SESSION['c_resp'];
@@ -73,7 +75,7 @@
                                 }
                             ?>
                         </p>
-                        <p class="red-text">
+                        <p class="red-text center">
                             <?php
                                 if(isset($_SESSION['c_error'])){
                                     echo $_SESSION['c_error'];
@@ -88,7 +90,7 @@
                 </div>
             </div>
         <?php }else{ ?>
-            <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; font-family:'Raleway', sans-serif;">
+            <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; background: rgba(255, 255, 255, 0.8)">
                 <h4 class="center" style="color:#ef5350;">Error de acceso</h4>
                 <p class="center">Debes ser vendedor para ingresar a esta página</p>
                 <div style="display: flex; justify-content: space-between;">
@@ -103,7 +105,7 @@
         <?php } ?>
 
     <?php }else{ ?>
-        <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; font-family:'Raleway', sans-serif;">
+        <div class="card-panel" style="width:400px; margin:0 auto; margin-top:20px; border-radius:10px; background: rgba(255, 255, 255, 0.8)">
             <h4 class="center" style="color:#ef5350;">Error de acceso</h4>
             <p class="center">Debes iniciar sesión</p>
             <p class="center">
