@@ -40,6 +40,11 @@
                     }
                 ?>
             </p>
+            <br>
+            <p class="center">
+                    <a href="info.php" class="deep-orange-text">About me</a>
+            </p>
+
         </div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>      
 </body>
