@@ -13,3 +13,17 @@
 .input-field .prefix.active{
     color: #000;
 }
+
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #ff5722 !important;
+}
+
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ff5722 !important;
+    box-shadow: 0 1px 0 0 #ff5722 !important;
+}
+.checkbox-orange[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid #ff5722;  
+    background-color: #ff5722;
+}

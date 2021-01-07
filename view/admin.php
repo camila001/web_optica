@@ -49,7 +49,7 @@
                 <li><a href="salir.php"><i class="material-icons deep-orange-text" style="font-size: 40px;">exit_to_app</i></a></li>
             </ul>
 
-            <div class="card-panel center" style="width:1200px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
+            <div class="container" style="padding:20px; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <div class="row">
                     <div class="col l4 m4 s12">
                         <?php if(!isset($_SESSION['editar'])){ ?>

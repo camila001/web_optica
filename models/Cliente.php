@@ -16,4 +16,11 @@ class Cliente{
         return $stm->execute();
     }
 
+    public function buscarClienteRut($rut){
+        $stm = Conexion::conector()->prepare("SELECT * FROM cliente WHERE rut_cliente=:A");
+        $stm->bindParam(":A",$rut);
+        $stm->execute();
+        return $stm->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 }

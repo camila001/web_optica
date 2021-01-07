@@ -21,9 +21,9 @@
                     <a href="#" class="brand-logo" style="margin-left: 20px;"><i class="material-icons" style="font-size: 40px;">assignment_ind</i> <?= $_SESSION['user']['nombre'] ?></a>
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 20px;">
-                        <li><a href="../view/user.php">Añadir cliente</a></li>
-                        <li><a href="../view/buscarReceta.php">Buscar receta</a></li>
-                        <li><a href="../view/ingresoReceta.php">Ingreso</a></li>
+                    <li><a href="../view/user.php">Añadir cliente<i class="material-icons left">assignment_ind</i></a></li>
+                        <li><a href="../view/buscarReceta.php">Buscar receta<i class="material-icons left">search</i></a></li>
+                        <li><a href="../view/ingresoReceta.php">Receta<i class="material-icons left">playlist_add</i></a></li>
                         <li><a href="salir.php"><i class="material-icons" style="font-size: 40px;">exit_to_app</i></a></li>
                     </ul>
                 </div>
@@ -47,7 +47,7 @@
                 <li><a href="salir.php"><i class="material-icons deep-orange-text" style="font-size: 40px;">exit_to_app</i></a></li>
             </ul>
             
-            <div class="card-panel" style="width:500px; margin:0 auto; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
+            <div class="container" style="width:500px; padding:20px; margin-top:20px; border-radius:10px; align-content:center; background: rgba(255, 255, 255, 0.8)">
                 <form action="../controllers/NewClient.php" method="POST">
                     <h4>Nuevo cliente</h4>
                     <br>
