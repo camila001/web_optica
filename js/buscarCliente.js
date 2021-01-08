@@ -68,30 +68,34 @@ new Vue({
                 });
                 const resp = await res.json();
                 console.log(resp);
-                M.toast({html:"Receta creada!"});
-                this.rut='';
-                this.tipoLente='';
-                this.esf_oi='';
-                this.esf_od='';
-                this.cil_oi='';
-                this.cil_od='';
-                this.eje_oi='';
-                this.eje_od='';
-                this.prisma='';
-                this.base='';
-                this.id_armazon='';
-                this.id_material_cristal='';
-                this.id_tipo_cristal='';
-                this.distancia='';
-                this.precio='';
-                this.fechaEntrega='';
-                this.fechaRetiro='';
-                this.obs='';
-                this.rut='';
-                this.fechaVisita='';
-                this.rut_medico='';
-                this.nombre_medico='';
-                this.esta=false;
+                if (resp == 1){
+                    M.toast({html:"Receta enviada!"});
+                    this.rut='';
+                    this.tipoLente='';
+                    this.esf_oi='';
+                    this.esf_od='';
+                    this.cil_oi='';
+                    this.cil_od='';
+                    this.eje_oi='';
+                    this.eje_od='';
+                    this.prisma='';
+                    this.base='';
+                    this.id_armazon='';
+                    this.id_material_cristal='';
+                    this.id_tipo_cristal='';
+                    this.distancia='';
+                    this.precio='';
+                    this.fechaEntrega='';
+                    this.fechaRetiro='';
+                    this.obs='';
+                    this.rut='';
+                    this.fechaVisita='';
+                    this.rut_medico='';
+                    this.nombre_medico='';
+                    this.esta=false;
+                }else{
+                    M.toast({html:"Hubo un error :("});
+                }
             }catch(error){
                 console.log(error);
             }
