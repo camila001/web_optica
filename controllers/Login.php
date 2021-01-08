@@ -46,8 +46,6 @@ class Login{
             header("Location: ../index.php");
             return;
         }
-
-        
         
     }
 

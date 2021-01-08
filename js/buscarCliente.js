@@ -2,7 +2,7 @@ new Vue({
     el:'#app',
     data:{
         rut:"",
-        url: "http://localhost/optica/",
+        url: "https://opticaweb.herokuapp.com/",
         cliente: {},
         esta: false,
         //combo box

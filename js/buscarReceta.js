@@ -1,7 +1,7 @@
 new Vue({
     el:'#app',
     data:{
-        url:"http://localhost/optica/",
+        url:"https://opticaweb.herokuapp.com/",
         rut:"",
         fecha:"",
         recetas:[],
