@@ -89,9 +89,9 @@ class InsertarReceta{
                 $modelo = new Receta();
                 $count = $modelo->insertarReceta($data);
                 if($count==1){
-                    echo json_encode(["msg"=>"Añadio"]);
+                    echo json_encode(["msg"=>"1"]);
                 }else{
-                    echo json_encode(["msg"=>"no :c"]);
+                    echo json_encode(["msg"=>"0"]);
                 }
             }else{
                 echo json_encode(["msg"=>"Acceso denegado"]);
